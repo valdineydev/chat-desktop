@@ -98,7 +98,7 @@
                 <configuration>
 
                     <mainClass>
-                        com.example.chatdesktop/com.example.chatdesktop.HelloApplication
+                        com.example.chatdesktop/com.example.chatdesktop.Main
                     </mainClass>
 
                 </configuration>
