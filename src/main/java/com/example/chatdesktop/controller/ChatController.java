@@ -195,4 +195,32 @@ public class ChatController {
 
         campoMensagem.requestFocus();
     }
+    @FXML
+    private void novaConversa() {
+
+        // Limpa o histórico
+        historico.clear();
+
+        // Adiciona novamente a configuração inicial da IA
+        historico.add(
+                new ChatMessage(
+                        "system",
+                        "Você é um assistente útil, educado e objetivo. " +
+                                "Responda sempre em português do Brasil."
+                )
+        );
+
+        // Limpa a tela
+        areaChat.clear();
+
+        // Limpa o campo
+        campoMensagem.clear();
+
+        // Garante que a interface esteja liberada
+        campoMensagem.setDisable(false);
+        botaoEnviar.setDisable(false);
+
+        // Volta o cursor para o campo
+        campoMensagem.requestFocus();
+    }
 }

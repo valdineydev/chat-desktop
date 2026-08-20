@@ -16,10 +16,9 @@
     <!-- ========================= -->
     <!-- TOPO -->
     <!-- ========================= -->
-
     <top>
 
-        <VBox spacing="5">
+        <HBox spacing="15" alignment="CENTER_LEFT">
 
             <padding>
                 <Insets
@@ -29,15 +28,25 @@
                         left="20"/>
             </padding>
 
-            <Label
-                    text="Chat com IA"
-                    styleClass="titulo"/>
+            <VBox spacing="5"
+                  HBox.hgrow="ALWAYS">
 
-            <Label
-                    text="Groq • openai/gpt-oss-20b"
-                    styleClass="modelo"/>
+                <Label
+                        text="Chat com IA"
+                        styleClass="titulo"/>
 
-        </VBox>
+                <Label
+                        text="Groq • openai/gpt-oss-20b"
+                        styleClass="modelo"/>
+
+            </VBox>
+
+            <Button
+                    text="Nova conversa"
+                    onAction="#novaConversa"
+                    styleClass="botao-nova-conversa"/>
+
+        </HBox>
 
     </top>
 
