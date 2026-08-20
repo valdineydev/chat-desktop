@@ -10,15 +10,19 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane
-        xmlns:fx="http://javafx.com/fxml"
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
         fx:controller="com.example.chatdesktop.controller.ChatController">
 
     <!-- ========================= -->
     <!-- TOPO -->
     <!-- ========================= -->
+
     <top>
 
-        <HBox spacing="15" alignment="CENTER_LEFT">
+        <HBox
+                spacing="15"
+                alignment="CENTER_LEFT">
 
             <padding>
                 <Insets
@@ -28,8 +32,11 @@
                         left="20"/>
             </padding>
 
-            <VBox spacing="5"
-                  HBox.hgrow="ALWAYS">
+            <!-- Título e modelo -->
+
+            <VBox
+                    spacing="5"
+                    HBox.hgrow="ALWAYS">
 
                 <Label
                         text="Chat com IA"
@@ -40,6 +47,9 @@
                         styleClass="modelo"/>
 
             </VBox>
+
+
+            <!-- Nova conversa -->
 
             <Button
                     text="Nova conversa"
@@ -57,11 +67,24 @@
 
     <center>
 
-        <TextArea
-                fx:id="areaChat"
-                editable="false"
-                wrapText="true"
-                promptText="A conversa aparecerá aqui..."/>
+        <VBox spacing="10">
+
+            <padding>
+                <Insets
+                        top="0"
+                        right="15"
+                        bottom="0"
+                        left="15"/>
+            </padding>
+
+            <TextArea
+                    fx:id="areaChat"
+                    editable="false"
+                    wrapText="true"
+                    promptText="A conversa aparecerá aqui..."
+                    VBox.vgrow="ALWAYS"/>
+
+        </VBox>
 
     </center>
 
@@ -72,7 +95,7 @@
 
     <bottom>
 
-        <HBox spacing="10">
+        <VBox spacing="8">
 
             <padding>
                 <Insets
@@ -82,19 +105,42 @@
                         left="15"/>
             </padding>
 
-            <TextField
-                    fx:id="campoMensagem"
-                    promptText="Digite sua mensagem..."
-                    HBox.hgrow="ALWAYS"
-                    onAction="#enviarMensagem"/>
 
-            <Button
-                    fx:id="botaoEnviar"
-                    text="Enviar"
-                    prefWidth="100"
-                    onAction="#enviarMensagem"/>
+            <!-- Campo + Enviar -->
 
-        </HBox>
+            <HBox spacing="10">
+
+                <TextField
+                        fx:id="campoMensagem"
+                        promptText="Digite sua mensagem..."
+                        HBox.hgrow="ALWAYS"
+                        onAction="#enviarMensagem"/>
+
+                <Button
+                        fx:id="botaoEnviar"
+                        text="Enviar"
+                        prefWidth="100"
+                        onAction="#enviarMensagem"/>
+
+            </HBox>
+
+
+            <!-- Copiar resposta -->
+
+            <HBox
+                    spacing="10"
+                    alignment="CENTER_RIGHT">
+
+                <Button
+                        fx:id="botaoCopiar"
+                        text="Copiar resposta"
+                        disable="true"
+                        onAction="#copiarResposta"
+                        styleClass="botao-copiar"/>
+
+            </HBox>
+
+        </VBox>
 
     </bottom>
 
